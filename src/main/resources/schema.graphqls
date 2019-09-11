@@ -1,0 +1,19 @@
+directive @fetch(from : String!) on FIELD_DEFINITION
+
+type Layer {
+    id: String
+    name: String
+    description: String
+}
+
+type Account {
+    id: String!
+    name: String
+    description: String
+}
+
+type Query {
+    hello: String
+    accounts(ids: [String]!): [Account]
+    layers(ids: [String]!): [Layer]
+}
